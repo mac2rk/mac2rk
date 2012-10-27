@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/mavr/DIY/Developer/mac2rk/gr_1/XONIX.RKR"
+            argument = "-b /Users/mavr/volcano.bin"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
