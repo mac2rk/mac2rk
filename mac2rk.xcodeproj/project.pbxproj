@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABF4755A162D77BD0013532C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ABF47559162D77BD0013532C /* main.c */; };
 		ABF4755C162D77BD0013532C /* mac2rk.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ABF4755B162D77BD0013532C /* mac2rk.1 */; };
+		D095E814163BE23600D7EA2A /* libportaudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D095E813163BE23500D7EA2A /* libportaudio.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		ABF47555162D77BD0013532C /* mac2rk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mac2rk; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF47559162D77BD0013532C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		ABF4755B162D77BD0013532C /* mac2rk.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mac2rk.1; sourceTree = "<group>"; };
+		D095E813163BE23500D7EA2A /* libportaudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libportaudio.a; path = ../../../../../opt/local/lib/libportaudio.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D095E814163BE23600D7EA2A /* libportaudio.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 		ABF4754A162D77BD0013532C = {
 			isa = PBXGroup;
 			children = (
+				D095E813163BE23500D7EA2A /* libportaudio.a */,
 				ABF47558162D77BD0013532C /* mac2rk */,
 				ABF47556162D77BD0013532C /* Products */,
 			);
@@ -180,6 +184,10 @@
 		ABF47560162D77BD0013532C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -187,6 +195,10 @@
 		ABF47561162D77BD0013532C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -210,6 +222,7 @@
 				ABF47561162D77BD0013532C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
