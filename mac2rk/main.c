@@ -23,7 +23,7 @@ void usage(void)
 	fprintf(stderr, "usage: mac2rk [-b [-a loadaddr]] [-r baudrate] filename\n");
 	fprintf(stderr, "       use -b for plain binary files, such as compiler output\n");
 	fprintf(stderr, "       use without -b for .rkr, .gam and other tape images\n");
-    fprintf(stderr, "       loadaddr must be between 0h and %lXh; default is 0h\n", FILESIZE_LIMIT);
+    fprintf(stderr, "       loadaddr must be between 0 and %#lXh; default is 0\n", FILESIZE_LIMIT);
     fprintf(stderr, "       baudrate must be between 1 and %ld; default is %ld\n", SAMPLE_RATE/2, DEFAULT_BAUDRATE);
 }
 
@@ -168,7 +168,7 @@ int main(int argc, char *argv[])
 
     if (startAddress < 0 || startAddress > FILESIZE_LIMIT)
     {
-        fprintf(stderr, "loadadd must be between 0 and %lX\n", FILESIZE_LIMIT);
+        fprintf(stderr, "loadadd must be between 0 and %#lX\n", FILESIZE_LIMIT);
         exit(EXIT_FAILURE);
     }
     
@@ -193,7 +193,7 @@ int main(int argc, char *argv[])
     
     if (fileSize > FILESIZE_LIMIT)
     {
-        fprintf(stderr, "Input file is too long\n");
+        fprintf(stderr, "Input file is too long, max allowed length is %lX\n", FILESIZE_LIMIT);
         fclose(inputFile);
         exit(EXIT_FAILURE);
     }
